@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+      Author: Caique Trivelato
+      Date: 4/8/2024
+
+      Filename: BMI.html
+   -->
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>Calculating BMI</title>
+   <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+	<header>
+	<h1>
+	Calculating Body Mass Index WebPage
+	</h1>
+	</header>
+	
+	<article>
+		<form> 
+			<fieldset>
+			<label for="calculating">
+			Weight (in lbs):
+			</label>
+			<input type="text" id="weightValue">
+			</fieldset>
+			
+			<fieldset>
+			<label for="calculating">
+			Height (in inches):
+			</label>
+			<input type="text" id="heightValue">
+			</fieldset>
+			
+			<fieldset>
+            <button type="button" id="button">Calculate BMI</button>
+			</fieldset>
+			
+			<fieldset>
+			<label for="result">
+			The Body Mass Index (BMI) is:
+			</label>
+			<p type="text" id="result">&nbsp;</p>
+			</fieldset>
+	</article>
+	
+	<script>
+	function calcBMI() {
+		var value1 = document.getElementById("weightValue").value;
+		var value2 = document.getElementById("heightValue").value;
+		var intWeight = parseInt(value1);
+		var intHeight = parseInt(value2);
+		
+		var bodyMassIndex = (intWeight*703)/(intHeight*intHeight);
+		
+		document.getElementById("result").innerHTML = bodyMassIndex;
+	}
+	
+	document.getElementById("button").addEventListener("click", calcBMI, false);
+	</script>
+</body>
+</html>

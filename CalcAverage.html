@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+      Author: Caique Trivelato
+      Date: 4/8/2024
+
+      Filename: CalcAverage.html
+   -->
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>Calculating Average</title>
+   <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+	<header>
+	<h1>
+	Calculating Average WebPage
+	</h1>
+	</header>
+	
+	<article>
+		<form> 
+			<fieldset>
+			<label for="calculating">
+			Value #1
+			</label>
+			<input type="text" id="avgValue1">
+			</fieldset>
+			
+			<fieldset>
+			<label for="calculating">
+			Value #2
+			</label>
+			<input type="text" id="avgValue2">
+			</fieldset>
+			
+			<fieldset>
+			<label for="calculating">
+			Value #3
+			</label>
+			<input type="text" id="avgValue3">
+			</fieldset>
+			
+			<fieldset>
+			<label for="calculating">
+			Value #4
+			</label>
+			<input type="text" id="avgValue4">
+			</fieldset>
+			
+			<fieldset>
+			<label for="calculating">
+			Value #5
+			</label>
+			<input type="text" id="avgValue5">
+			</fieldset>
+			
+			<fieldset>
+            <button type="button" id="button">Calculate Average</button>
+			</fieldset>
+			
+			<fieldset>
+			<label for="result">
+			The Average is:
+			</label>
+			<p type="text" id="result">&nbsp;</p>
+			</fieldset>
+	</article>
+	
+	<script>
+	function calcAvg() {
+		var value1 = document.getElementById("avgValue1").value;
+		var value2 = document.getElementById("avgValue2").value;
+		var value3 = document.getElementById("avgValue3").value;
+		var value4 = document.getElementById("avgValue4").value;
+		var value5 = document.getElementById("avgValue5").value;
+		var intValue1 = parseInt(value1);
+		var intValue2 = parseInt(value2);
+		var intValue3 = parseInt(value3);
+		var intValue4 = parseInt(value4);
+		var intValue5 = parseInt(value5);
+		
+		var averageResult = performCalc(intValue1, intValue2, intValue3, intValue4, intValue5);
+		document.getElementById("result").innerHTML = averageResult;
+	}
+	
+	function performCalc(item1, item2, item3, item4, item5) {
+		var calcResult = (item1 + item2 + item3 + item4 + item5)/5;
+		return calcResult
+		}
+		
+	document.getElementById("button").addEventListener("click", calcAvg, false);
+	</script>
+</body>
+</html>
+		
